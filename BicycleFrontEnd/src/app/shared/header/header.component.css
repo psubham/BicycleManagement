@@ -1,0 +1,26 @@
+
+.carousel-item img{
+    width:100vw;
+    height:60vh;
+    margin:10px,10px,10px,10px;
+    /* padding:10px; */
+}
+.carousal-section2{
+    margin: 10px,10px,10px,10px;
+    padding: 10px;
+    border: thistle;
+}
+.container{
+    font-family: cursive;
+}
+.display-3 text-center{
+    font-style: italic;
+    font-size: 20px;
+}
+.jumbotran{
+    margin:10px,10px,10px,10px;
+    padding:10px;
+}
+.header{
+    background-color: rgb(182, 173, 173);
+}

@@ -1,0 +1,34 @@
+img {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 50px;
+    height:30vh;
+  }
+  
+  .extended {
+    margin-bottom: 20px;
+  }
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-size: 36px;
+    text-emphasis: bold;
+    font-weight: bold;
+  }
+  .container {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:350px;
+    text-align:center;
+    margin: 0 auto;
+    
+  }
+  .thumbnail{
+    margin-bottom: 10px;
+  }

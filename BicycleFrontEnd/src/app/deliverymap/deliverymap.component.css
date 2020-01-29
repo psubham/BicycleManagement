@@ -1,0 +1,12 @@
+agm-map {
+    height: 300px;
+  }
+  /* .container{
+    width:100%;
+    text-align: center;
+
+  } */
+  .card-title{
+    font-family:'Yeon Sung', cursive;
+    text-align: center;
+  }

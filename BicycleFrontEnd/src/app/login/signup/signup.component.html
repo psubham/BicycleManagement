@@ -1,0 +1,89 @@
+
+    <div class="md-2">
+        <div class="md-4">    
+        <div class="title">SIGN UP</div>
+        <form [formGroup]="formModel" autocomplete="on" (ngSubmit)="onSubmits(formModel)">
+            <div class="form-group required">
+                <label class="control-label"><strong>User Name</strong></label>
+                <input class="form-control" required="required" formControlName="UserName">
+                <div>
+                    <div class="text-danger"
+                        *ngIf="formModel.get('UserName')?.touched && formModel.get('UserName').errors?.required">This
+                        field is mandatory</div>
+                </div>
+
+            </div>
+            <div class="form-group required">
+                <label class="control-label"><strong>Email</strong></label>
+                <input class="form-control" formControlName="Email">
+                <!-- <label  class="text-danger" *ngIf=" formModel.get('Email').error?.required">This field is mandatory</label> -->
+
+                <div class="alert alert-danger"
+                    *ngIf="formModel.get('Email').touched && formModel.get('Email').errors?.required ">This field is
+                    mandatory</div>
+
+                <div>
+                    <div class="text-danger" *ngIf=" formModel.get('Email')?.errors?.pattern ">enter proper mail address
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="form-group required">
+                <label class="control-label"><strong>First Name</strong></label>
+                <input class="form-control" formControlName="FirstName">
+                <div>
+                    <label class="text-danger"
+                        *ngIf="formModel.get('FirstName').touched && formModel.get('FirstName').errors?.required">This
+                        field is mandatory</label>
+                </div>
+
+            </div>
+            <div class="form-group required">
+                <label><strong>Name</strong> </label>
+                <input class="form-control" formControlName="LastName">
+            </div>
+            <div formGroupName="Password">
+                <div class="form-group required">
+                    <label type="password" class="control-label"><strong> Password</strong></label>
+                    <show-hide-password size="sm" btnStyle="secondary" [btnOutline]="false">
+                    <input class="form-control" formControlName="Password" type="password">
+                </show-hide-password>
+                    <div>
+                        <label class="text-danger"
+                            *ngIf="formModel.get('Password.Password')?.touched && formModel.get('Password.Password').errors?.required">This
+                            field is mandatory</label>
+                    </div>
+                    <div>
+                        <label class="text-danger" *ngIf=" formModel.get('Password.Password').errors?.pattern">Should
+                            contain atleast 1 lowercase 1 uppercase and 1 number</label>
+                    </div>
+
+
+                </div>
+                <div class="form-group required">
+                    <label type="password" class="control-label"><strong>Confirm Password</strong></label>
+                    <input class="form-control" formControlName="ConfirmPassword" type="password">
+                    <div>
+                        <label class="text-danger"
+                            *ngIf=" formModel.get('Password.ConfirmPassword')?.touched && formModel.get('Password.ConfirmPassword').errors?.required">This
+                            field is mandatory</label>
+                            <!-- <label class="text-danger"
+                            *ngIf=" formModel.get('Password.ConfirmPassword')?.errors && formModel.get('Password.ConfirmPassword')!==formModel.get('Password.Password')">
+                            Password Mismatch</label> -->
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-success" [disabled]="!formModel.valid">Register</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+

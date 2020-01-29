@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="col-md-12">
+        <h2 class="he"> Bicycle Details</h2>
+        <button class="btn btn-info " style="width:150px" (click)="addBicycle()" > Add Bicycle</button>
+
+            <input type="text col-6" class="rounded mx-3" placeholder="Search " [(ngModel)]="searchText"/>
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="trd">
+                    <th>Id</th>
+                    <th>Bicycle Number</th>
+                    <th>Type Id</th>
+                    <th>Hub Id</th>
+                    <th>Rent Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="tbd">
+                <tr *ngFor="let bicycle of bicycles | slice: (page-1)*pagesize : (page-1)*pagesize+ pagesize">
+                    <td >{{bicycle.bicycleId}}</td>
+                    <td>{{bicycle.bicycleNumber}}</td>
+                    <td>{{bicycle.typeId}}</td>
+                    <td>{{bicycle.hubId}}</td>
+                    <td>{{bicycle.isRent}}</td>
+                    <td><button class="btn btn-outline-danger" (click)="deleteBicycle(bicycle)"> Delete</button>
+                        <button class="btn btn-outline-success" (click)="editBicycle(bicycle)" style="margin-left: 20px;">
+                            Edit</button></td>
+                </tr>
+
+            </tbody>
+            <ngb-pagination [(page)]="page" [pageSize]="pagesize" [collectionSize]="bicycles.length"></ngb-pagination>
+        </table>
+
+    </div>
+</div>

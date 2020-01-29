@@ -1,0 +1,32 @@
+<!-- <p>bicycleedit works!</p> -->
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Edit User</h2>
+    <form [formGroup]="editForm"  (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="BicycleNumber">BicycleNumber:</label>
+        <input type="number" formControlName="BicycleNumber" placeholder="BicycleNumber" name="BicycleNumber" class="form-control" id="BicycleNumber" readonly="true">
+      </div>
+
+      <div class="form-group">
+        <label for="TypeId">TypeId:</label>
+        <input formControlName="TypeId" placeholder="TypeId" name="TypeId" class="form-control" id="TypeId" readonly="true">
+      </div>
+
+      <div class="form-group">
+        <label for="HubId">HubId:</label>
+        <select class="custom-select" (change)="changeHub($event.target.value)">
+            <option value="">Choose your hub</option>
+            <option *ngFor="let hub of hubs" [value]="hub.id">
+              {{hub.sub_locality_l1}},{{hub.sub_locality_l2}}
+            </option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="IsRent">IsRent:</label>
+        <input type="boolean" formControlName="IsRent" placeholder="IsRent" name="IsRent" class="form-control" id="IsRent" readonly="true">
+      </div>
+      <button class="btn btn-success" [disabled]="!opt" >Update</button>
+    </form>
+  </div>
+

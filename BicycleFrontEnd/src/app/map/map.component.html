@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="header" *ngIf="action!='booking'">   
+      <div class="title">{{title}}</div>
+  </div>
+  <div class="searchBar">
+    <div class="form-group">
+      <label>Enter address</label>
+
+      <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+        placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+        #search>
+    </div>
+  </div>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <agm-marker *ngFor="let m of hubs; let i = index" (markerClick)="clickedMarker(m.id)" [latitude]="m.latitude"
+      [longitude]="m.longitude" [markerDraggable]="false"
+      [iconUrl]="'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'">
+    </agm-marker>
+
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)"
+      *ngIf="hubSelected==true || action=='booking'"></agm-marker>
+  </agm-map>
+  
+  <div class="SubmitButton" *ngIf="action=='createHub'">
+    <button (click)="createHub()" *ngIf="hubSelected==true">
+        confirm
+    </button>
+    <button (click)="AddHub()"  *ngIf="hubSelected==false">
+          Add New Hub       
+      </button>
+  </div>
+
+</div>

@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/home"><i class="fa fa-bicycle 3x"></i><strong>VAHAN</strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" *ngIf="role=='default'">
+        <a class="nav-link" routerLink="/home"> <strong>HOME</strong> </a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="role=='admin'">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Create
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+          <a class="nav-link" [routerLink]="['/map',{action:'createHub'}]">Add New Hub</a>
+          <a class="nav-link" routerLink="/Add Bike">Add New Bicycle</a>
+          <a class="nav-link" routerLink="/Add Bike Type">Add New Category</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" *ngIf="role=='admin'">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Manage
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="nav-link" routerLink="/crud">Manage Bike</a>
+          <!-- <a class="nav-link" href="#">Account detail</a> -->
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <div class="nav-item" *ngIf="role=='default'">
+            <a class="nav-link" routerLink="/login" style="color: black"><strong>LOGIN</strong></a>
+        </div>
+        <ul *ngIf="isLogin()">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="color:black">
+              {{userName}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/deliverydetail">User detail</a>
+              <a class="dropdown-item" routerLink="/bookingHistory">Bookings</a>
+              <a class="dropdown-item" routerLink="/home"(click)="onLogout()">LogOut</a>
+            </div>
+          </div>
+        </ul>
+      </form>
+  </div>
+
+</nav>

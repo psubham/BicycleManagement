@@ -1,0 +1,27 @@
+.conta{
+    color: beige;
+}
+
+  .backgroundImage{
+    background : url(/assets/Images/addbike.jpg);
+    background-attachment: fixed;
+    background-size:100% auto;
+    height: 110vh;
+    /* width:110vw; */
+}
+
+/* .container{
+    text-align:center;
+    margin: 0 auto;
+    position: absolute;
+    left:50%;
+    top:50%;
+    right:50%;
+    transform: translate(-50%, -50%);
+
+} */
+.fieldset{
+    padding-top:10px;
+    margin-top: 10px;
+}
+

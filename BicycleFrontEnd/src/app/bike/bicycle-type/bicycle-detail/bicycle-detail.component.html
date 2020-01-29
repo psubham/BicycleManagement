@@ -1,0 +1,17 @@
+
+<div *ngIf="checknumber();else elseBlock">
+  <div class="container">
+    <div class="row space-top">
+      <div class="col-sm-12">
+        <p>Pick up your favourite bike</p>
+      </div>
+    </div>
+    <div class="row space-top " *ngIf=" isBicycleThere(); else elseBlock;">
+      <div class="col-sm-4" *ngFor="let bicycle of bicycles;" style="margin-bottom: 10px;" >
+        <div class="card" style="border-radius:15px;">
+            <app-bicycle-card  [bicycle]="bicycle" (click)="SelectBicycle(bicycle.typeId)" [class.highlighted]="bicycle.typeId == currentcycle" ></app-bicycle-card>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>

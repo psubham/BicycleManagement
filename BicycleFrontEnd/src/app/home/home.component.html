@@ -1,0 +1,37 @@
+
+<ngb-carousel #carousel interval="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+         <img src="/assets/Images/1.jpg" alt="Random first slide">
+        </div>
+      <div class="carousel-caption">
+        <h3>Life is better  on a bike</h3>
+        <p>When in doubt,Pedal it out!!</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/Images/2.jpg" alt="Random first slide">
+
+        </div>
+        <div class="carousel-caption">
+          <h1>Get Out and Ride!!!</h1>
+          <p>Every ride is a tiny holiday</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+
+              <img src="/assets/Images/3.jpg" alt="Random first slide">
+            </div>
+          <div class="carousel-caption">
+            <h3>Bicycle means Happiness</h3>
+            <p>Bike brings you to places that car never see!!!</p>
+          </div>
+        </ng-template>
+    </ngb-carousel>
+
+
+
+
+

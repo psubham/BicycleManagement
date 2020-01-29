@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="col-md-12">
+        <h2 class="he"> Booking Details</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Bicycle Number</th>
+                    <th>DateTime</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bicycle of bookings | slice: (page-1)*pagesize : (page-1)*pagesize+ pagesize">
+                    <td >{{bicycle.bookingId}}</td>
+                    <td>{{bicycle.bicycleNumber}}</td>
+                    <td>{{bicycle.dateTime}}</td>
+                </tr>
+            </tbody>
+            <ngb-pagination [(page)]="page" [pageSize]="pagesize" [collectionSize]="booking?.length"></ngb-pagination>
+        </table>
+        <button class="btn btn-success" routerLink="/home">
+          Go Back
+        </button>
+    </div>
+</div>
+

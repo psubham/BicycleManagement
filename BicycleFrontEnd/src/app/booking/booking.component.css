@@ -1,0 +1,22 @@
+/* .container {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width:350px;
+    text-align:center;
+    margin: 0 auto;
+    
+  } */
+.backgroundImage{
+    background : url(../../assets/Images/booking4.jpg);
+    background-attachment: fixed;
+    background-size:100% auto;
+    height: 90vh;
+}
+.mt-2{
+  display: flex;
+  justify-content: center;
+}
+
+  

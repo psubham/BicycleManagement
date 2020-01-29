@@ -1,0 +1,33 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-style: inherit;
+    background-color: rgb(248, 242, 242);
+    text-align: center;
+}
+
+i.fa.fa-facebook, i.fa.fa-twitter, i.fa.fa-instagram{
+    border-radius: 100%;
+    font-size: 28px;
+    height: 38px;
+    line-height: 40px;
+    margin: 5px;
+    text-align: center;
+    width: 38px;
+    }
+    i.fa.fa-facebook{
+    border: 1px solid #3B5998;
+    color: #3B5998;
+    }
+    i.fa.fa-twitter{
+    border: 1px solid #00aced;
+    color: #00aced;
+    }
+    i.fa.fa-instagram{
+    border: 1px solid #833ab4;
+    color: #833ab4;
+    }
+    .fo{
+        text-align: center
+    }

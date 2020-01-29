@@ -1,0 +1,40 @@
+<div class="backgroundImage">
+  <div class="container">
+    <div class="row align-items-center" style="height: 50vh">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+          <div class="group-gap">
+            <div class="d-block my-3">
+              <div class="mb-3">
+                <select class="custom-select" (change)="changeHub($event.target.value)">
+                  <option value="">Choose your hub</option>
+                  <option *ngFor="let hub of hubs" [value]="hub.id">
+                    {{hub.sub_locality_l1}},{{hub.sub_locality_l2}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="group-gap" *ngIf="opt1">
+            <div class="d-block my-3">
+
+              <div class="mb-3">
+                <select class="custom-select" (change)="changeBicycleTypes($event.target.value)">
+                  <option value="">Choose your bicycle</option>
+                  <option *ngFor="let bicycleType of bicycleTypes" [value]="bicycleType.typeId">
+                    {{bicycleType.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <button type="submit" (click)="onAddBike()" class="btn btn-danger btn-lg btn-block" [disabled]="!opt2||flag" >
+            Add Bike
+          </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

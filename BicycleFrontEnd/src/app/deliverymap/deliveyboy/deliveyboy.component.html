@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 class="hex"> Bicycle Details</h2>
+  <table class="table table-striped">
+    <thead class="he">
+      <tr>
+        <th class="hidden">Id</th>
+        <th>User Name</th>
+        <th>Delivery Address</th>
+        <th>Cycle Number</th>
+        <th>Cycle Id</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody class="header">
+      <tr *ngFor="let user of users | slice: (page-1)*pagesize : (page-1)*pagesize+ pagesize">
+        <td class="hidden"></td>
+        <td>{{user.userName}}</td>
+        <td>{{user.deliveryAddress}}</td>
+        <td>{{user.bicycleNumber}}</td>
+        <td>{{user.bicycleId}}</td>
+        <td><button class="btn btn-outline-success my-1" (click)="OnConfirm(user)" style="width: 90px;">
+            Confirm</button>
+          <button class="btn btn-outline-danger" (click)="OnCancel(user)" style="width: 90px;">
+            Cancel</button></td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>

@@ -1,0 +1,58 @@
+<div class="backgroundImage">
+  <div class="container ">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 mt-5">
+        <form [formGroup]="form">
+          <fieldset>
+           <div class="form-group">
+              <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name"
+                formControlName="name" style="margin-top:5px;">
+            </div>
+            <div class="alert alert-danger" *ngIf="f.name.touched && f.name.errors?.required">
+              Name is required!
+            </div>
+            <div class="alert alert-danger" *ngIf="f.name.touched && f.name.errors?.minlength">
+              Name should have minimum 6 characters!
+            </div>
+            <div class="alert alert-danger" *ngIf="f.name.touched && f.name.errors?.maxlength">
+              Name should have maximum 20 characters!
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="description" rows="3" placeholder="Enter description"
+                formControlName="description"></textarea>
+            </div>
+            <div class="alert alert-danger" *ngIf="f.description.touched && f.description.errors?.required">
+              Description is required!
+            </div>
+            <div class="alert alert-danger" *ngIf="f.description.touched && f.description.errors?.minlength">
+              Minimum length: 10 characters!
+            </div>
+            <div class="form-group">
+              <img [src]="imageUrl" style="width:180px;height:150px;padding-bottom:5px">
+              <input type="file" #Image accept="image/*" id="imageUrl" (change)="handleFileInput($event.target.files)"
+                formControlName="imageUrl" class="mx-2">
+            </div>
+
+            <div class="alert alert-danger" *ngIf="f.imageUrl.touched && f.imageUrl.errors?.required">
+              Image URL is required!
+            </div>
+            <div class="alert alert-danger" *ngIf="f.imageUrl.touched && f.imageUrl.errors?.pattern">
+              Image URL should end with .jpg, .jpeg, .png or .gif!
+            </div>
+
+            <div class="form-group">
+               <input type="text" class="form-control" id="type" aria-describedby="typeHelp" placeholder="Enter Type"
+                formControlName="type">
+            </div>
+            <div class="alert alert-danger" *ngIf="f.type.touched && f.type.errors?.required">
+              type is required!
+            </div>
+         </fieldset>
+          <button (click)="createBicycle()" class="btn btn-primary btn-block" [disabled]="!form.valid||flag">Add new
+            cycle</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

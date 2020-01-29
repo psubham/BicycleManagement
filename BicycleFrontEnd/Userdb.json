@@ -1,0 +1,25 @@
+{
+    "Users":[
+        {
+            "userName":"Subham",
+            "dateTime":"23oct1998",
+            "deliveryAddress":"Kormangla",
+            "deliverylat":"12.3039 ",
+            "deliverylng":"76.6543",
+            "bookingId":"1",
+            "bicycleNumber":"1234",
+            "bicycleId":"135"
+        },
+        {
+            "userName":"Shruta",
+            "dateTime":"9988776646",
+            "deliveryAddress":"Indiranagar",
+            "deliverylat":"12.9782",
+            "deliverylng":"77.6407",
+            "bookingId":"2",
+            "bicycleNumber":"1235",
+            "bicycleId":"125"
+        }
+
+    ]
+}

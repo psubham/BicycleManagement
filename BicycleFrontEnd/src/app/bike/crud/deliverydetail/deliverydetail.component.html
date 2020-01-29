@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="col-md-12">
+        <h2 class="he"> User Details</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="trd">
+                    <th>User Name</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="tbd">
+                <tr *ngFor="let detail of details | slice: (page-1)*pagesize : (page-1)*pagesize+ pagesize">
+                    <td >{{detail.userName}}</td>
+                    <td>{{detail.roleName}}</td>
+                    <td>
+                        <button class="btn btn-outline-success" (click)="updateRole(detail)" style="margin-left: 20px;">
+                            Edit</button></td>
+                </tr>
+
+            </tbody>
+            <ngb-pagination [(page)]="page" [pageSize]="pagesize" [collectionSize]="details.length"></ngb-pagination>
+        </table>
+
+    </div>
+</div>
+

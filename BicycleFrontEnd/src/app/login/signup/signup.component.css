@@ -1,0 +1,47 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: gainsboro;
+    padding: 15px;
+    margin:auto;
+    text-align: center;
+}
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+  }
+.form-control.ng-touched.ng-invalid
+{
+      border:2px solid red;
+}
+#formModel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+}
+.md-4{
+    margin-top: 20px;
+    width: 30%;
+    margin: auto;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+
+}
+.control-label{
+    color: black;
+    font-display: bold;
+    text-align: center;
+}
+.card1{
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.card-title{
+    font-family: cursive;
+    font-size: 30px;
+}

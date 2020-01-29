@@ -1,0 +1,22 @@
+<div class="login">
+    <form #form='ngForm' class="md-4" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="title">SIGN IN</div>
+        <div class="form-group">
+            <label>UserName</label>
+            <input class="form-control" #UserName='ngModel' name="UserName" [(ngModel)]="formModel.UserName" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" #Password='ngModel' name="Password"
+                [(ngModel)]="formModel.Password" required>
+            </div>
+        <div class="form-group1">
+            <button type="submit" class="btn btn-info" [disabled]="form.invalid" style="width: 150px" >LOGIN</button>
+            <button type="button" class=" btn  btn-info pull-center my-2" (click)="btnClick();" style="width: 150px"><i
+                class="fa fa-plus"></i> REGISTER</button>
+        </div>
+        <div class="d">
+
+        </div>
+    </form>
+</div>

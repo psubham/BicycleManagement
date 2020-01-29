@@ -1,0 +1,18 @@
+agm-map {
+    height: 40vh;
+    /* width: 50vw; */
+  }
+.title{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: large;
+  color:black;
+  text-align: center;
+}
+.SubmitButton{
+  padding:20px;
+  align-items: center;
+  display: flex;
+  float: right;
+}
+  
+  

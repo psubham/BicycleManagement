@@ -1,0 +1,57 @@
+<!-- DELIVERY WORK!!!! -->
+
+<!-- <div class="container">
+
+  <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+            <agm-direction [origin]="origin" [destination]="destination">
+            </agm-direction>
+        </agm-map>
+</div> -->
+
+
+<div class="container">
+    <div class="row custom-wrapper text-align" style="height:50vh">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 my-5">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Delivery Details </h5>
+
+                    <table class="table table-borderless">
+                        <tbody>
+                          <tr>
+                            <td><b>Name:</b></td>
+                            <td>{{deliveryDetail.userName}}</td>
+                          </tr>
+                          <tr>
+                            <td  ><b>Booking Id:</b></td>
+                            <td>{{deliveryDetail.bookingId}}</td>
+                          </tr>
+                          <tr>
+                            <td  ><b>Cycle Number:</b></td>
+                            <td>{{deliveryDetail.bicycleNumber}}</td>
+                          </tr>
+                          <tr>
+                            <td><b>Delivery Address:</b></td>
+                            <td>{{deliveryDetail.deliveryAddress| slice:100}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    <!-- <a href="#" class="card-link">Card link</a> -->
+
+                    <div class="col-xs-4 mx-4">
+
+                    <button class="btn btn-outline-success" (click)="Ondelivery()">Delivered</button>
+                    </div>
+
+                    <div class="col-xs-4 my-2 mx-4">
+
+                    <button class="btn btn-outline-danger" (click)="Oncancel()">Canceled</button>
+                    </div>
+                    <!-- <a href="#" class="card-link">Another link</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,80 @@
+<!-- <app-map [hubs]="hubs" (getClickHub)="getHubId($event)">
+
+</app-map>
+getClickHub
+<app-bicycle-detail [hubid]=hubId></app-bicycle-detail> -->
+<!-- <button (click)="routetomap()">map</button>
+<button (click)="routetobike()">bike</button>
+<router-outlet>
+
+</router-outlet> -->
+<div class="backgroundImage">
+    <div class="container ">
+        <div class="row custom-wrapper">
+            <div class="col-md-12">
+
+                <form [formGroup]="form" (ngSubmit)="onBook()">
+                    <div class="group-gap">
+                        <div class="d-block my-3">
+
+                            <div class="mb-3">
+                                <select class="custom-select" (change)="changeHub($event.target.value)"
+                                    formControlName="hub">
+                                    <option value="">Choose your hub</option>
+                                    <option *ngFor="let hub of hubs" [value]="hub.id" class="col-md-12">
+                                        {{hub.sub_locality_l1}},{{hub.sub_locality_l2}}
+                                    </option>
+                                </select>
+
+                                <div class="mt-2" >
+                                    <div class="btn btn-info mb-2 mr-2"
+                                        (click)="openVerticallyCentered(content)" style="text-align: center;">
+                                        choose from map
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="group-gap">
+                        <div class="d-block my-3">
+
+                            <div class="mb-3">
+
+                                <app-bicycle-detail [hubid]="hubId" (SelectBicycleId)="getBicycleId($event)"
+                                    *ngIf="hubId!=null">
+
+                                </app-bicycle-detail>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger btn-lg btn-block" [disabled]="!checkBook()
+                    ">Book</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-map [action]="action" [hubs]="hubs" (getClickHub)="getHubId($event)" (getlatlng)="getLatLng($event)"
+            (getaddress)="getAddress($event)"></app-map>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Close click')"
+            [disabled]="hubId==null">Confirm</button>
+    </div>
+</ng-template>
+ 
