@@ -78,7 +78,7 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password'
     ShowHidePasswordModule,
     Ng4LoadingSpinnerModule.forRoot() ,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBEVydAXGqM2Y9Azo_5IlaLbSk_qGg9fgo',
+      apiKey: '****', // add api key
       libraries: ['places']
     }),
     ToastrModule.forRoot()
