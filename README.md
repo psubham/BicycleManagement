@@ -1,4 +1,4 @@
-# OnlineBicycleManagement
+# BicycleManagement
 It is multi user , it have 3 type user - admin,delivery , customer
 use real time location for booking ,use of google map
 upload image in cloud
